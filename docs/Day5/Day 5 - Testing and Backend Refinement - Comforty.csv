@@ -1,0 +1,60 @@
+Test Case ID,Test Case Description,Test Steps,Expected Result,Actual Result,Status,Severity Level,Remarks
+TC001,Product Listing Display,"1. Navigate to the product listing page.
+2. Check if products are displayed correctly.","Products are displayed with images, titles, and prices.",Products displayed correctly.,Passed,Low,All products loaded without issues.
+TC002,Cart Operations,"1. Add a product to the cart.
+2. Update the quantity.
+3. Remove the product.",Cart should reflect the changes accurately.,Cart updated correctly.,Passed,High,No issues with cart operations.
+TC003,Performance - Page Load Time,"1. Measure the initial page load time.
+2. Optimize assets if necessary.",Page should load in under 2 seconds.,Page loaded in 1.8 seconds.,Passed,High,Performance optimization successful.
+TC006,Admin Login,"1. Navigate to the admin login page.
+2. Enter valid admin credentials.
+3. Click Login.",Admin should be redirected to the dashboard.,Admin logged in successfully.,Passed,High,Admin authentication works as expected.
+TC007,Admin Logout,"1. Log in as admin.
+2. Click Logout.",Admin should be logged out and redirected to the login page.,Admin logged out successfully.,Passed,Medium,Logout functionality works as expected.
+TC008,Fetch Product Data from Sanity,"1. Query Sanity for product data.
+2. Display the fetched data on the frontend.",Product data should be displayed correctly.,Data fetched and displayed correctly.,Passed,High,Sanity integration works as expected.
+TC010,User Registration,"1. Navigate to the registration page.
+2. Fill in the registration form.
+3. Submit the form.",User should receive a confirmation email and be registered.,User registered successfully.,Passed,High,Registration process works as expected.
+TC011,User Login,"1. Navigate to the login page.
+2. Enter valid credentials.
+3. Click Login.",User should be logged in and redirected to the homepage.,User logged in successfully.,Passed,High,Login functionality works as expected.
+TC012,User Password Reset,"1. Navigate to the password reset page.
+2. Enter the registered email.
+3. Submit the form.",User should receive a password reset link via email.,Password reset link sent successfully.,Passed,Medium,Password reset functionality works as expected.
+TC013,Admin Create Product,"1. Log in as admin.
+2. Navigate to the product creation page.
+3. Fill in the product details.
+4. Submit the form.",Product should be created and visible in the product listing.,Product created successfully.,Passed,High,Product creation works as expected.
+TC014,Admin Update Product,"1. Log in as admin.
+2. Navigate to the product edit page.
+3. Update product details.
+4. Submit the form.",Product details should be updated.,Product updated successfully.,Passed,High,Product update works as expected.
+TC015,Admin Delete Product,"1. Log in as admin.
+2. Navigate to the product listing.
+3. Click Delete on a product.
+4. Confirm deletion.",Product should be removed from the listing.,Product deleted successfully.,Passed,High,Product deletion works as expected.
+TC018,User Profile Update,"1. Log in as a user.
+2. Navigate to the profile page.
+3. Update profile details.
+4. Submit the form.",Profile details should be updated.,Profile updated successfully.,Passed,Medium,Profile update works as expected.
+TC019,User Order History,"1. Log in as a user.
+2. Navigate to the order history page.",Order history should be displayed correctly.,Order history displayed correctly.,Passed,Medium,Order history functionality works as expected.
+TC020,Admin View Orders,"1. Log in as admin.
+2. Navigate to the orders page.",All orders should be displayed correctly.,Orders displayed correctly.,Passed,High,Order viewing works as expected.
+TC021,Admin Update Order Status,"1. Log in as admin.
+2. Navigate to the orders page.
+3. Update the status of an order.
+4. Submit the form.",Order status should be updated.,Order status updated successfully.,Passed,High,Order status update works as expected.
+TC022,User Authentication - Invalid Credentials,"1. Navigate to the login page.
+2. Enter invalid credentials.
+3. Click Login.",User should see an error message.,Error message displayed correctly.,Passed,Medium,Authentication error handling works as expected.
+TC023,User Authentication - Expired Session,"1. Log in as a user.
+2. Wait for the session to expire.
+3. Try to access a protected page.",User should be redirected to the login page.,User redirected to login page.,Passed,Medium,Session expiration handling works as expected.
+TC024,Admin Authentication - Unauthorized Access,1. Try to access the admin dashboard without logging in.,User should be redirected to the login page.,User redirected to login page.,Passed,High,Unauthorized access handling works as expected.
+TC025,Fetch Analytics Data from Sanity,"1. Query Sanity for analytics data.
+2. Display the fetched data on the admin dashboard.",Analytics data should be displayed correctly.,Data fetched and displayed correctly.,Passed,High,Sanity integration works as expected.
+TC026,Migrate Analytics Data to Sanity,"1. Export analytics data from the old database.
+2. Import data into Sanity.
+3. Verify data integrity.",Data should be migrated without loss or corruption.,Data migrated successfully.,Passed,High,Data migration completed successfully.

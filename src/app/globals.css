@@ -2,20 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .vertical-text {
+    writing-mode: vertical-rl;
+    rotate: 180deg;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  .gallery-grid-xl {
+    grid-template-areas:
+      "gallery-1 gallery-1 gallery-2 gallery-3"
+      "gallery-1 gallery-1 gallery-4 gallery-5";
+  }
+  .gallery-grid-lg {
+    grid-template-areas:
+      "gallery-1 gallery-1"
+      "gallery-1 gallery-1"
+      "gallery-2 gallery-3"
+      "gallery-4 gallery-5";
+  }
 }
