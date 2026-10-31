@@ -87,8 +87,11 @@ export default function Home() {
       <section className="container px-5 py-24 mx-auto">
         <h1 className="text-[32px] mb-4 font-semibold">Top Categories</h1>
         <div className="flex flex-wrap gap-8 justify-center">
-          {categories.map((category, index) => (
-            <CategoryCard imageUrl={category.image.asset.url} key={index} />
+          {categories.map((_, index) => (
+            <CategoryCard
+              imageUrl={`/category/cat-${index + 1}.jpeg`}
+              key={index}
+            />
           ))}
         </div>
       </section>

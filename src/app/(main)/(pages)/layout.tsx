@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import { useCart } from "@/hooks/useCart";
 import React, { useEffect } from "react";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   const { dispatch } = useCart();
   useEffect(() => {
     const data = localStorage.getItem("cart");
@@ -25,4 +25,4 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default layout;
+export default Layout;

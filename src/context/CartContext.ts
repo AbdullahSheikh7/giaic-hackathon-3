@@ -16,7 +16,7 @@ type ActionDT =
   | { type: "ADD_ITEM"; payload: Omit<Item, "quantity"> }
   | { type: "REMOVE_ITEM"; payload: { id: string } }
   | { type: "REMOVE_ITEM_BY_ONE"; payload: { id: string } }
-  | { type: "CLEAR_CART"; payload: {} };
+  | { type: "CLEAR_CART"; payload: null };
 
 export const initialState: {
   items: Item[];

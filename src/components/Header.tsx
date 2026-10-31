@@ -2,10 +2,9 @@
 
 import { FaCheck } from "react-icons/fa";
 import { IoMdInformationCircleOutline } from "react-icons/io";
-import { FaChevronDown } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import logo from "@/app/assets/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,6 +19,7 @@ const Header = () => {
   };
 
   const user = useAuth();
+  console.log(user.isSignedIn);
 
   const { state } = useCart();
 
@@ -42,16 +42,16 @@ const Header = () => {
             <div className="gap-4 sm:flex hidden">
               {user ? (
                 <>
+                  <UserButton />
+                </>
+              ) : (
+                <>
                   <Link href="/sign-in">
                     <p className="flex items-center gap-1">Sign In</p>
                   </Link>
                   <Link href="/sign-up">
                     <p className="flex items-center gap-1">Signup</p>
                   </Link>
-                </>
-              ) : (
-                <>
-                  <UserButton />
                 </>
               )}
               <Link href="/faq">

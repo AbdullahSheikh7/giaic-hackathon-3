@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { IoCartOutline } from "react-icons/io5";
 
 type Props = {
   name: string;

@@ -3,7 +3,6 @@
 import CartProductCatalog from "@/components/CartProductCatalog";
 import { useCart } from "@/hooks/useCart";
 import Link from "next/link";
-import { useState } from "react";
 
 const Page = () => {
   const { state } = useCart();
