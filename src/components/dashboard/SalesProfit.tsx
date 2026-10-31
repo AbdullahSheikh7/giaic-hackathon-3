@@ -121,7 +121,7 @@ const SalesProfit = () => {
       <div className="flex justify-between items-center">
         <h5 className="card-title">Sales Profit</h5>
         <Select id="countries" className="select-md" required>
-          <option >This Week</option>
+          <option>This Week</option>
           <option>April 2024</option>
           <option>May 2024</option>
           <option>June 2024</option>

@@ -1,9 +1,19 @@
 "use client";
 import React from "react";
-import { Badge, Dropdown, Progress } from "flowbite-react";
-import { HiOutlineDotsVertical  } from "react-icons/hi";
+import {
+  Badge,
+  Dropdown,
+  Progress,
+  Table,
+  TableHeadCell,
+  TableRow,
+  TableCell,
+  DropdownItem,
+  TableHead,
+  TableBody,
+} from "flowbite-react";
+import { HiOutlineDotsVertical } from "react-icons/hi";
 import { Icon } from "@iconify/react";
-import { Table } from "flowbite-react";
 
 import product1 from "/public/images/products/s1.jpg";
 import product2 from "/public/images/products/s2.jpg";
@@ -12,7 +22,6 @@ import product4 from "/public/images/products/s4.jpg";
 import product5 from "/public/images/products/s5.jpg";
 import Image from "next/image";
 import SimpleBar from "simplebar-react";
-
 
 const PopularProducts = () => {
   const ProductTableData = [
@@ -94,16 +103,16 @@ const PopularProducts = () => {
         <SimpleBar className="max-h-[450px]">
           <div className="overflow-x-auto">
             <Table hoverable>
-              <Table.Head>
-                <Table.HeadCell className="p-6">Products</Table.HeadCell>
-                <Table.HeadCell>Payment</Table.HeadCell>
-                <Table.HeadCell>Status</Table.HeadCell>
-                <Table.HeadCell></Table.HeadCell>
-              </Table.Head>
-              <Table.Body className="divide-y divide-border dark:divide-darkborder ">
+              <TableHead>
+                <TableHeadCell className="p-6">Products</TableHeadCell>
+                <TableHeadCell>Payment</TableHeadCell>
+                <TableHeadCell>Status</TableHeadCell>
+                <TableHeadCell></TableHeadCell>
+              </TableHead>
+              <TableBody className="divide-y divide-border dark:divide-darkborder ">
                 {ProductTableData.map((item, index) => (
-                  <Table.Row key={index}>
-                    <Table.Cell className="whitespace-nowrap ps-6">
+                  <TableRow key={index}>
+                    <TableCell className="whitespace-nowrap ps-6">
                       <div className="flex gap-3 items-center">
                         <Image
                           src={item.img}
@@ -114,8 +123,8 @@ const PopularProducts = () => {
                           <h6 className="text-sm">{item.name}</h6>
                         </div>
                       </div>
-                    </Table.Cell>
-                    <Table.Cell>
+                    </TableCell>
+                    <TableCell>
                       <h5 className="text-base text-wrap">
                         {item.payment}
                         <span className="text-dark opacity-70">
@@ -133,13 +142,16 @@ const PopularProducts = () => {
                           size={"sm"}
                         />
                       </div>
-                    </Table.Cell>
-                    <Table.Cell>
-                      <Badge color={`light${item.statuscolor}`} className={`text-${item.statuscolor}`}>
+                    </TableCell>
+                    <TableCell>
+                      <Badge
+                        color={`light${item.statuscolor}`}
+                        className={`text-${item.statuscolor}`}
+                      >
                         {item.statustext}
                       </Badge>
-                    </Table.Cell>
-                    <Table.Cell>
+                    </TableCell>
+                    <TableCell>
                       <Dropdown
                         label=""
                         dismissOnClick={false}
@@ -150,17 +162,17 @@ const PopularProducts = () => {
                         )}
                       >
                         {tableActionData.map((items, index) => (
-                          <Dropdown.Item key={index} className="flex gap-3">
+                          <DropdownItem key={index} className="flex gap-3">
                             {" "}
                             <Icon icon={`${items.icon}`} height={18} />
                             <span>{items.listtitle}</span>
-                          </Dropdown.Item>
+                          </DropdownItem>
                         ))}
                       </Dropdown>
-                    </Table.Cell>
-                  </Table.Row>
+                    </TableCell>
+                  </TableRow>
                 ))}
-              </Table.Body>
+              </TableBody>
             </Table>
           </div>
         </SimpleBar>

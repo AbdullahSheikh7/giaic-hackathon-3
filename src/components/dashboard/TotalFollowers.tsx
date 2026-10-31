@@ -3,8 +3,8 @@ import React from "react";
 import dynamic from "next/dynamic";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import { Icon } from "@iconify/react";
-import { Dropdown } from "flowbite-react";
-import { HiOutlineDotsVertical  } from "react-icons/hi";
+import { Dropdown, DropdownItem } from "flowbite-react";
+import { HiOutlineDotsVertical } from "react-icons/hi";
 
 const TotalFollowers = () => {
   const Action = [
@@ -126,10 +126,10 @@ const TotalFollowers = () => {
               )}
             >
               {Action.map((items, index) => (
-                <Dropdown.Item key={index} className="flex gap-3">
+                <DropdownItem key={index} className="flex gap-3">
                   <Icon icon={`${items.icon}`} height={18} />
                   <span>{items.listtitle}</span>
-                </Dropdown.Item>
+                </DropdownItem>
               ))}
             </Dropdown>
           </div>
@@ -148,8 +148,8 @@ const TotalFollowers = () => {
                 options={ChartData}
                 series={ChartData.series}
                 type="bar"
-                height='100px'
-                width='100%'
+                height="100px"
+                width="100%"
               />
             </div>
           </div>
