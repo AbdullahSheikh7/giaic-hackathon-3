@@ -1,13 +1,17 @@
 "use client";
 import React from "react";
 import { Icon } from "@iconify/react";
-import { Badge, Dropdown } from "flowbite-react";
-import { HiOutlineDotsVertical  } from "react-icons/hi";
-import { Dropdown } from 'flowbite-react';
+import { Badge, Dropdown, DropdownItem } from "flowbite-react";
+import { HiOutlineDotsVertical } from "react-icons/hi";
 import Link from "next/link";
 
 const EarningReports = () => {
   const dropdownItems = ["Action", "Another action", "Something else"];
+
+  const items = dropdownItems.map((item, index) => ({
+    key: index,
+    label: item,
+  }));
 
   const EarningReportsData = [
     {
@@ -15,7 +19,7 @@ const EarningReports = () => {
       title: "Bank Transfer",
       subtitle: "and +1 more",
       color: "bg-lightprimary",
-      text:'text-primary',
+      text: "text-primary",
       statuscolor: "success",
       statustext: "16.3%",
     },
@@ -24,7 +28,7 @@ const EarningReports = () => {
       title: "Net Profit",
       subtitle: "and +4 more",
       color: "bg-lighterror",
-      text:'text-error',
+      text: "text-error",
       statuscolor: "success",
       statustext: "12.55%",
     },
@@ -33,7 +37,7 @@ const EarningReports = () => {
       title: "Total Income",
       subtitle: "and +4 more",
       color: "bg-lightsecondary",
-      text:'text-secondary',
+      text: "text-secondary",
       statuscolor: "success",
       statustext: "12.55%",
     },
@@ -42,7 +46,7 @@ const EarningReports = () => {
       title: "Total Expenses",
       subtitle: "and +2 more",
       color: "bg-lightwarning",
-      text:'text-warning',
+      text: "text-warning",
       statuscolor: "success",
       statustext: "8.28%",
     },
@@ -51,7 +55,7 @@ const EarningReports = () => {
       title: "Net Profit",
       subtitle: "and +4 more",
       color: "bg-lighterror",
-      text:'text-error',
+      text: "text-error",
       statuscolor: "error",
       statustext: "10.55%",
     },
@@ -71,14 +75,17 @@ const EarningReports = () => {
             )}
           >
             {dropdownItems.map((items, index) => {
-              return <Dropdown.Item key={index}>{items}</Dropdown.Item>;
+              return <DropdownItem key={index}>{items}</DropdownItem>;
             })}
           </Dropdown>
         </div>
 
         <div className="flex flex-col mt-2">
           {EarningReportsData.map((item, index) => (
-            <div className="flex items-center justify-between py-5 border-b border-ld" key={index}>
+            <div
+              className="flex items-center justify-between py-5 border-b border-ld"
+              key={index}
+            >
               <div className="flex gap-3 items-center">
                 <span
                   className={`w-14 h-10 rounded-full flex items-center justify-center  ${item.color} ${item.text}`}
@@ -87,7 +94,13 @@ const EarningReports = () => {
                 </span>
                 <div>
                   <h4 className="text-sm mb-1">{item.title}</h4>
-                  <p className="text-darklink text-xs flex items-center gap-1">{item.subtitle} <Icon icon="material-symbols:info-outline-rounded" height={13}></Icon></p>
+                  <p className="text-darklink text-xs flex items-center gap-1">
+                    {item.subtitle}{" "}
+                    <Icon
+                      icon="material-symbols:info-outline-rounded"
+                      height={13}
+                    ></Icon>
+                  </p>
                 </div>
               </div>
               <Badge
@@ -106,8 +119,12 @@ const EarningReports = () => {
             </div>
           ))}
 
-          <Link href={'/'} className="text-base text-dark text-center pt-6 font-semibold text-dark hover:text-primary dark:hover:text-primary">
-          View more markets</Link>
+          <Link
+            href={"/"}
+            className="text-base text-dark text-center pt-6 font-semibold text-dark hover:text-primary dark:hover:text-primary"
+          >
+            View more markets
+          </Link>
         </div>
       </div>
     </>
