@@ -3,7 +3,9 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import { Badge, Dropdown } from "flowbite-react";
 import { HiOutlineDotsVertical  } from "react-icons/hi";
+import { Dropdown } from 'flowbite-react';
 import Link from "next/link";
+
 const EarningReports = () => {
   const dropdownItems = ["Action", "Another action", "Something else"];
 
